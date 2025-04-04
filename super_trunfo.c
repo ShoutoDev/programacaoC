@@ -4,12 +4,23 @@ int main(){
     char estado[10], estado2[10];
     char codigoCarta[4], codigoCarta2[4];
     char nomeCidade[30], nomeCidade2[30];
-    int populacao, populacao2;
+    unsigned long int populacao, populacao2;
     float area, area2;
     float pib, pib2;
     int pontosTuristicos, pontosTuristicos2;
     float densidade, densidade2;
     float perCapita, perCapita2;
+    float superPoder, superPoder2;
+    float densidadeInversa, densidadeInversa2;
+    unsigned long int resultado;
+    unsigned long int resultado2;
+    unsigned long int resultado3;
+    unsigned long int resultado4;
+    unsigned long int resultado5;
+    unsigned long int resultado6;
+    unsigned long int resultado7;
+
+
 
     printf("Carta 1 \n");     /*Cadastro da Carta 1*/
 
@@ -69,6 +80,12 @@ int main(){
     densidade2 = populacao2 / area2;    // calculado a densidade da carta 2
     perCapita2 = pib2 / populacao2;     // calculando o pib per capita da carta 2
 
+    densidadeInversa = 1 / densidade;
+    densidadeInversa2 = 1 / densidade2;
+
+    superPoder = (float)populacao + area + pib + pontosTuristicos + perCapita + densidadeInversa;
+    superPoder2 = (float)populacao2 + area2 + pib2 + pontosTuristicos2 + perCapita2 + densidadeInversa2;
+
     /*Impressão dos valores*/
 
     printf("Carta 1: \n");                    
@@ -94,6 +111,17 @@ int main(){
     printf("Número de Pontos Turísticos: %d \n", pontosTuristicos2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2);
     printf("PIB per Capita: %.2f Reais \n", perCapita2);
+
+    printf("------------------------------------------------------\n");
+
+    printf("Comparação de Cartas: \n");
+    printf("População: %lu\n", (int)populacao > populacao2);
+    printf("Área: %lu\n", (int)area > area2);
+    printf("PIB: %lu\n", (int)pib > pib2);
+    printf("Pontos Turísticos: %lu\n", (int)pontosTuristicos > pontosTuristicos2);
+    printf("Densidade Populacional: %lu\n", (int)densidade > densidade2);
+    printf("PIB per Capita: %lu\n", (int)perCapita > perCapita2);
+    printf("Super Poder: %lu\n", (int)superPoder > superPoder2);
 
     return 0;
 
