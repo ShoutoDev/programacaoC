@@ -12,6 +12,7 @@ int main(){
     float perCapita, perCapita2;
     float superPoder, superPoder2;
     float densidadeInversa, densidadeInversa2;
+    int opcao;
     unsigned long int resultado;
     unsigned long int resultado2;
     unsigned long int resultado3;
@@ -114,10 +115,56 @@ int main(){
 
     printf("------------------------------------------------------\n");
 
-    if (populacao > populacao2){
-        printf("Carta 1 Venceu!.\n");
-    }else{
-        printf("Carta 2 Venceu!. \n");
+    printf("Qual comparação vc deseja fazer: \n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de Pontos Turísticos\n");
+    printf("5. Densidade Demográfica\n");
+    printf("Escolha:\n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        if (populacao > populacao2){
+            printf("Carta 1 Venceu!.\n");
+        }else{
+            printf("Carta 2 Venceu!. \n");
+        }
+        break;
+    case 2:
+        if (area > area2){
+            printf("Carta 1 Venceu!.\n");
+        }else{
+            printf("Carta 2 Venceu!. \n");
+        }
+        break;
+    case 3:
+        if (pib > pib2){
+            printf("Carta 1 Venceu!.\n");
+        }else{
+            printf("Carta 2 Venceu!. \n");
+        }
+        break;    
+    case 4:
+        if (pontosTuristicos > pontosTuristicos2){
+            printf("Carta 1 Venceu!.\n");
+        }else{
+            printf("Carta 2 Venceu!. \n");
+        }
+        break;
+    case 5:
+        if (densidadeInversa > densidadeInversa2){
+            printf("Carta 1 Venceu!.\n");
+        }else{
+            printf("Carta 2 Venceu!. \n");
+        }
+        break;                    
+    
+    default:
+        printf("Valor Inválido");
+        break;
     }
     
     return 0;
