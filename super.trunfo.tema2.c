@@ -13,14 +13,9 @@ int main(){
     float superPoder, superPoder2;
     float densidadeInversa, densidadeInversa2;
     int opcao;
-    unsigned long int resultado;
-    unsigned long int resultado2;
-    unsigned long int resultado3;
-    unsigned long int resultado4;
-    unsigned long int resultado5;
-    unsigned long int resultado6;
-    unsigned long int resultado7;
-
+    int resultado, resultado2;
+    char primeiroAtributo, segundoAtributo;
+    int ataque, ataque2, defesa, defesa2, recuo, recuo2;
 
 
     printf("Carta 1 \n");     /*Cadastro da Carta 1*/
@@ -115,56 +110,74 @@ int main(){
 
     printf("------------------------------------------------------\n");
 
-    printf("Qual comparação vc deseja fazer: \n");
-    printf("1. População\n");
-    printf("2. Área\n");
-    printf("3. PIB\n");
-    printf("4. Número de Pontos Turísticos\n");
-    printf("5. Densidade Demográfica\n");
-    printf("Escolha:\n");
-    scanf("%d", &opcao);
+    printf("Bem Vindo ao Jogo!\n");
+    printf("Escolha o primeiro atributo.\n");
+    printf("A. Ataque\n");
+    printf("D. Defesa\n");
+    printf("R. Recuo\n");
+    printf("Escolha a comparação: ");
+    scanf(" %c", &primeiroAtributo);
 
-    switch (opcao)
+    switch (primeiroAtributo)
     {
-    case 1:
-        if (populacao > populacao2){
-            printf("Carta 1 Venceu!.\n");
-        }else{
-            printf("Carta 2 Venceu!. \n");
-        }
-        break;
-    case 2:
-        if (area > area2){
-            printf("Carta 1 Venceu!.\n");
-        }else{
-            printf("Carta 2 Venceu!. \n");
-        }
-        break;
-    case 3:
-        if (pib > pib2){
-            printf("Carta 1 Venceu!.\n");
-        }else{
-            printf("Carta 2 Venceu!. \n");
-        }
-        break;    
-    case 4:
-        if (pontosTuristicos > pontosTuristicos2){
-            printf("Carta 1 Venceu!.\n");
-        }else{
-            printf("Carta 2 Venceu!. \n");
-        }
-        break;
-    case 5:
-        if (densidadeInversa > densidadeInversa2){
-            printf("Carta 1 Venceu!.\n");
-        }else{
-            printf("Carta 2 Venceu!. \n");
-        }
-        break;                    
+    case 'A':
+    case 'a':
+        resultado = ataque > ataque2 ? 1 : 0;
+    break;
+
+    case 'D':
+    case 'd':
+    resultado = defesa > defesa2 ? 1 : 0;
+    break;
+
+    case 'R':
+    case 'r':
+        resultado = recuo > recuo2 ? 1 : 0;
+    break;        
     
     default:
-        printf("Valor Inválido");
+        printf("Valor Inválido.\n");
         break;
+    }
+
+    printf("------------------------------------------------------\n");
+
+    printf("Escolha o segundo atributo.\n");
+    printf("A. Ataque\n");
+    printf("D. Defesa\n");
+    printf("R. Recuo\n");
+    printf("Escolha a comparação: ");
+    scanf(" %c", &segundoAtributo);
+
+    if (primeiroAtributo == segundoAtributo){
+        printf("Você escolheu o meesmo atributo! \n");
+    }else{
+        switch (segundoAtributo)
+        {
+        case 'A':
+        case 'a':
+            resultado2 = ataque > ataque2 ? 1 : 0;
+        break;   
+        case 'D':
+        case 'd':
+            resultado2 = defesa > defesa2 ? 1 : 0;
+        break; 
+        case 'R':
+        case 'r':
+            resultado2 = recuo > recuo2 ? 1 : 0;
+        break;
+        
+        default:
+            break;
+        }
+    }
+
+    if (resultado && resultado2){
+        printf("Você Ganhou\n");
+    }else if (resultado != resultado2){
+        printf("Empatou!\n");
+    }else{
+        printf("Você Perdeu!\n");
     }
     
     return 0;
