@@ -4,7 +4,7 @@ int main(){
     char estado[10], estado2[10];
     char codigoCarta[4], codigoCarta2[4];
     char nomeCidade[30], nomeCidade2[30];
-    unsigned long int populacao, populacao2;
+    unsigned long int populacao, populacao2;    //Definição de todas as variáveis
     float area, area2;
     float pib, pib2;
     int pontosTuristicos, pontosTuristicos2;
@@ -80,10 +80,10 @@ int main(){
     densidade2 = populacao2 / area2;    // calculado a densidade da carta 2
     perCapita2 = pib2 / populacao2;     // calculando o pib per capita da carta 2
 
-    densidadeInversa = 1 / densidade;
+    densidadeInversa = 1 / densidade;  // calculando a densidade inversa de ambas as cartas
     densidadeInversa2 = 1 / densidade2;
 
-    superPoder = (float)populacao + area + pib + pontosTuristicos + perCapita + densidadeInversa;
+    superPoder = (float)populacao + area + pib + pontosTuristicos + perCapita + densidadeInversa;  //calculando o super poder de ambas as cartas
     superPoder2 = (float)populacao2 + area2 + pib2 + pontosTuristicos2 + perCapita2 + densidadeInversa2;
 
     /*Impressão dos valores*/
@@ -114,7 +114,7 @@ int main(){
 
     printf("------------------------------------------------------\n");
 
-    printf("Comparação de Cartas: \n");
+    printf("Comparação de Cartas: \n");        //Comparativo das Cartas para ver quem venceu!
     printf("População: %lu\n", (int)populacao > populacao2);
     printf("Área: %lu\n", (int)area > area2);
     printf("PIB: %lu\n", (int)pib > pib2);
