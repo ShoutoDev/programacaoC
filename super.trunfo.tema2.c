@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    char estado[10], estado2[10];
+    char estado[10], estado2[10];      //Declaração de todas as variaveis do programa
     char codigoCarta[4], codigoCarta2[4];
     char nomeCidade[30], nomeCidade2[30];
     unsigned long int populacao, populacao2;
@@ -76,10 +76,10 @@ int main(){
     densidade2 = populacao2 / area2;    // calculado a densidade da carta 2
     perCapita2 = pib2 / populacao2;     // calculando o pib per capita da carta 2
 
-    densidadeInversa = 1 / densidade;
+    densidadeInversa = 1 / densidade;   // calculando a densidade inversa de ambas as cartas
     densidadeInversa2 = 1 / densidade2;
 
-    superPoder = (float)populacao + area + pib + pontosTuristicos + perCapita + densidadeInversa;
+    superPoder = (float)populacao + area + pib + pontosTuristicos + perCapita + densidadeInversa;    //calculando o super poder de ambas as cartas
     superPoder2 = (float)populacao2 + area2 + pib2 + pontosTuristicos2 + perCapita2 + densidadeInversa2;
 
     /*Impressão dos valores*/
@@ -110,8 +110,8 @@ int main(){
 
     printf("------------------------------------------------------\n");
 
-    printf("Bem Vindo ao Jogo!\n");
-    printf("Escolha o primeiro atributo.\n");
+    printf("Bem Vindo ao Jogo!\n");    //Inicio do Jogo Super Trunfo
+    printf("Escolha o primeiro atributo.\n");    //Escolha do Primeiro Atributo
     printf("A. Ataque\n");
     printf("D. Defesa\n");
     printf("R. Recuo\n");
@@ -120,29 +120,29 @@ int main(){
 
     switch (primeiroAtributo)
     {
-    case 'A':
+    case 'A':    //Declarado A e a para caso escrever maiusculo e minusculo funcionar
     case 'a':
-        resultado = ataque > ataque2 ? 1 : 0;
+        resultado = ataque > ataque2 ? 1 : 0;    // condição ? verdadeiro : falso;
     break;
 
-    case 'D':
+    case 'D':    //Declarado A e a para caso escrever maiusculo e minusculo funcionar
     case 'd':
-    resultado = defesa > defesa2 ? 1 : 0;
+    resultado = defesa > defesa2 ? 1 : 0;    // condição ? verdadeiro : falso;
     break;
 
-    case 'R':
-    case 'r':
-        resultado = recuo > recuo2 ? 1 : 0;
+    case 'R':    //Declarado A e a para caso escrever maiusculo e minusculo funcionar
+    case 'r':  
+        resultado = recuo > recuo2 ? 1 : 0;    // condição ? verdadeiro : falso;
     break;        
     
     default:
-        printf("Valor Inválido.\n");
+        printf("Valor Inválido.\n");  //Verificação de valor caso seja inválido
         break;
     }
 
     printf("------------------------------------------------------\n");
 
-    printf("Escolha o segundo atributo.\n");
+    printf("Escolha o segundo atributo.\n");  //Escolha do Segundo Atributo
     printf("A. Ataque\n");
     printf("D. Defesa\n");
     printf("R. Recuo\n");
@@ -154,17 +154,17 @@ int main(){
     }else{
         switch (segundoAtributo)
         {
-        case 'A':
+        case 'A':   //Declarado A e a para caso escrever maiusculo e minusculo funcionar
         case 'a':
-            resultado2 = ataque > ataque2 ? 1 : 0;
+            resultado2 = ataque > ataque2 ? 1 : 0;   // condição ? verdadeiro : falso;
         break;   
-        case 'D':
+        case 'D':   //Declarado A e a para caso escrever maiusculo e minusculo funcionar
         case 'd':
-            resultado2 = defesa > defesa2 ? 1 : 0;
+            resultado2 = defesa > defesa2 ? 1 : 0;   // condição ? verdadeiro : falso;
         break; 
-        case 'R':
+        case 'R':   //Declarado A e a para caso escrever maiusculo e minusculo funcionar
         case 'r':
-            resultado2 = recuo > recuo2 ? 1 : 0;
+            resultado2 = recuo > recuo2 ? 1 : 0;   // condição ? verdadeiro : falso;
         break;
         
         default:
@@ -172,7 +172,7 @@ int main(){
         }
     }
 
-    if (resultado && resultado2){
+    if (resultado && resultado2){    //Verificação dos Resultados Obtidos pela comparação de atributos
         printf("Você Ganhou\n");
     }else if (resultado != resultado2){
         printf("Empatou!\n");
