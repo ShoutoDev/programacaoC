@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main (){
-    char nome1[10]="Torre", nome2[10]="Bispo", nome3[10]="Rainha";  //Declaração dos nomes das peças e contadores
+    char nome1[10]="Torre", nome2[10]="Bispo", nome3[10]="Rainha", nome4[10]="Cavalo";  //Declaração dos nomes das peças e contadores
     int casa = 1;
     int casa2 = 1;
 
@@ -22,7 +22,19 @@ int main (){
 
     for(int i = 1; i <= 5; i++){
         printf("O %s andou %d Casas na Diagonal: (Cima, Direita) \n", nome2, i); //Repetição para o Bispo
+
     }
 
+    printf("------------------------------------------------------\n");
+
+    for(int i = 2; i <= 2; i++){   // o For Externo deve rodar apenas 1 vez para printrar a Esquerda
+
+        for(int j = 1; j <= i; j++){     
+            printf("O %s andou 1 casa para Baixo (passo %d)\n", nome4, j);   // Movimento 2 casas para baixo
+        }
+        printf("O %s andou 1 casa para Esquerda\n", nome4);    // Movimento 1 casa para esquerda
+        
+    }
+    
     return 0;
 }
