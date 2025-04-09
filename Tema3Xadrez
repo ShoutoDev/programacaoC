@@ -1,40 +1,44 @@
 #include <stdio.h>
 
+void moverTorre(int casas){    //função para mover a Torre
+    if(casas > 0){
+        printf("a Torre andou para Direita \n");
+        moverTorre(casas - 1);        
+    }
+}
+
+void moverBispo(int casas){    //função para mover o Bispo
+    if(casas > 0){
+        printf("O Bispo andou para (Cima, Direita) \n");
+        moverBispo(casas - 1);
+    }    
+}
+
+void moverRainha(int casas){    //função para mover a Rainha
+    if(casas > 0){
+        printf("A Rainha andou para Esquerda \n");
+        moverRainha(casas - 1);
+    }  
+}
+
 int main (){
-    char nome1[10]="Torre", nome2[10]="Bispo", nome3[10]="Rainha", nome4[10]="Cavalo";  //Declaração dos nomes das peças e contadores
-    int casa = 1;
-    int casa2 = 1;
-
-    do{
-        printf("A %s andou %d Casas para Direita\n", nome1, casa);   //Repetição para Torre
-        casa++;
-
-    }while(casa <= 5);
-
-    printf("------------------------------------------------------\n");    
-
-    while(casa2 <= 8){
-        printf("A %s andou %d Casas para a esquerda \n", nome3, casa2);  //Repetição para Rainha
-        casa2++;
-    }
+    char nome4[10] = "Cavalo";
+    int quantidadeTorre = 5;   //declaração de 3 variaveis int para cada peça das funções com o valor de movimento
+    int quantidadeBispo = 5;
+    int quantidadeRainha = 8;
+    moverTorre(quantidadeTorre);  // 3 chamadas de funções criadas para cada peça
+    moverBispo(quantidadeBispo);
+    moverRainha(quantidadeRainha);
 
     printf("------------------------------------------------------\n");
 
-    for(int i = 1; i <= 5; i++){
-        printf("O %s andou %d Casas na Diagonal: (Cima, Direita) \n", nome2, i); //Repetição para o Bispo
-
-    }
-
-    printf("------------------------------------------------------\n");
-
-    for(int i = 2; i <= 2; i++){   // o For Externo deve rodar apenas 1 vez para printrar a Esquerda
-
-        for(int j = 1; j <= i; j++){     
-            printf("O %s andou 1 casa para Baixo (passo %d)\n", nome4, j);   // Movimento 2 casas para baixo
-        }
-        printf("O %s andou 1 casa para Esquerda\n", nome4);    // Movimento 1 casa para esquerda
+    for(int i = 2, j = 1; i <= 2 && j <= i; i++, j++){   //For Loop Alinhado com multiplas variaveis
+        printf("O %s andou 1 casa para Baixo \n", nome4);   // Impressão dos 2 movimentos para baixo
+        printf("O %s andou 1 casa para Baixo \n", nome4);    
+        printf("O %s andou 1 casa para Esquerda\n", nome4);    // impressão de 1 movimento para esquerda
         
     }
     
+
     return 0;
 }
