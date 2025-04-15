@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+#define tamanho 10
+#define navio 3
+
+int main (){
+
+    int tabuleiro[tamanho][tamanho];
+    int naviosHorizontal[navio] = {3,3,3};
+    int naviosVertical[navio] = {3,3,3};
+    int naviosDiagonal1[navio] = {3,3,3};
+    int naviosDiagonal2[navio] = {3,3,3};
+
+    for(int i = 0; i < tamanho;i++){
+        for (int j = 0; j < tamanho; j++){
+            tabuleiro[i][j] = 0;
+        }
+        
+    }
+
+    int linhaH = 2;
+    int colunaH = 4;
+
+    for(int i = 0; i < navio; i++){
+        tabuleiro[linhaH][colunaH + i] = naviosHorizontal[i];
+    }
+
+    int linhaV = 5;
+    int colunaV = 1;
+
+    for (int i = 0; i < navio; i++) {
+        tabuleiro[linhaV + i][colunaV] = naviosVertical[i];
+    }
+
+    int linhaD1 = 5;
+    int colunaD1 = 3;
+
+    for(int i = 0; i < navio; i++){
+        tabuleiro[linhaD1-i][colunaD1-i] = naviosDiagonal1[i];
+    }
+
+    int linhaD2 = 6;
+    int colunaD2 = 5;
+    
+    for(int i = 0; i < navio; i++){
+        tabuleiro[linhaD2-i][colunaD2+i] = naviosDiagonal2[i];
+    }
+  
+    printf(" TABULEIRO BATALHA NAVAL \n");
+    printf(" ");
+    for (int i = 0; i < tamanho; i++){
+        for(int j = 0; j < tamanho; j++){
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+
+
+
+}
